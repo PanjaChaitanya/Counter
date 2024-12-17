@@ -61,7 +61,7 @@ class Mycount extends React.Component {
   render() {
     return (
       <>
-        <header>INTERACTIVE COUNTER</header>
+        <header>I-COUNTER</header>
         <div id="container">
           <div id="inputContainer">
             <input type="number" id="i1" placeholder="Enter Minimum Value" />
