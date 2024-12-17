@@ -18,14 +18,17 @@ class Mycount extends React.Component {
     var max = parseInt(document.getElementById('i3').value);
     if (min < start && start < max) {
       this.setState({
-        min: '',
+        min: min,
         count: start,
-        max: '',
+        max: max,
         start: '',
         msg: '🟢 Starting Point 🟢',
       });
     } else {
-      alert('Please enter values in ascending order: Min < Start < Max');
+      this.setState({
+        msg: '😕 Invalid Input 😕'
+        });
+      
     }
   };
   IncreaseFun = () => {
@@ -53,6 +56,9 @@ class Mycount extends React.Component {
     }
   };
   resetFun = () => {
+    document.getElementById('i1').value=''
+    document.getElementById('i2').value=''
+    document.getElementById('i3').value=''
     this.setState({
       count: this.state.start,
       msg: '',
@@ -61,7 +67,7 @@ class Mycount extends React.Component {
   render() {
     return (
       <>
-        <header>In-COUNTER</header>
+        <header>INTERACTIVE COUNTER</header>
         <div id="container">
           <div id="inputContainer">
             <input type="number" id="i1" placeholder="Enter Minimum Value" />
